@@ -2,6 +2,7 @@ import { Box, Typography, styled } from '@mui/material';
 
 const TextoComBorda = styled(Typography)`
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
 `;
 
 const BoxBotoes = styled(Box)`
