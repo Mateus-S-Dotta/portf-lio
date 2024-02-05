@@ -12,7 +12,7 @@ import { BoxImagem } from './styles';
 import Pinturas from '../pinturas';
 
 function Page({ pagina }) {
-    const [passos, setPassos] = useState(3);
+    const [passos, setPassos] = useState(0);
     const [edicao, setEdicao] = useState(false);
     const [indicePinturas, setIndicePinturas] = useState(0);
     const [mostrarConteudo, setMostrarConteudo] = useState(true);
@@ -21,10 +21,10 @@ function Page({ pagina }) {
     const location = useLocation();
 
     useEffect(() => {
-        setPassos(3);
+        setPassos(0);
         setEdicao(false);
         return () => {
-            setPassos(3);
+            setPassos(0);
             setEdicao(false);
         }
     }, [location.pathname]);
