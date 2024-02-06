@@ -1,27 +1,37 @@
 import flechaDireita from '../../svg/flechaDireita.svg';
 import flechaEsquerda from '../../svg/flechaEsquerda.svg';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxCarrossel, BoxCentralizar, BoxConteudo, TextoComBorda } from '../styles';
 import textos from '../textos';
+import { useEffect, useRef, useState } from 'react';
 
 function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mostrarConteudo }) {
     const tamanho = (window.innerHeight - 75 - 125 - 16 - 16) / 2;
-    console.log(tamanho)
+    const textoComBarra = useRef(null);
+    const [alturaElemento, setAlturaElemento] = useState(0);
     const estiloBarra = {
         maxHeight: `${tamanho}px`,
-        overflowY: window.innerWidth < 862 ? 'auto' : 'hidden',
+        overflowY: alturaElemento >= tamanho ? 'auto' : 'hidden',
         scrollbarWidth: 'thin',
         scrollbarColor: '#fff #00000000',
-        paddingRight: '4px',
+        paddingRight: '0.4rem',
         display: 'inline-block',
         width: '100%'
-    }
-    // 72+ 125
-    const impedirPropagacao = (event) => {
-        event.stopPropagation();
     };
 
+    useEffect(() => {
+        if (textoComBarra.current) {
+            const alturaElemento = textoComBarra.current.offsetHeight;
+            setAlturaElemento(alturaElemento);
+        }
+    }, []);
+
+    function impedirPropagacao(e) {
+        e.stopPropagation();
+    }
+
     return (
-        <BoxCentralizar>
+        <BoxCentralizar tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             {mostrarConteudo && (
                 <BoxCarrossel>
                     <img
@@ -30,17 +40,27 @@ function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mos
                         src={flechaEsquerda}
                         alt='flecha para esquerda'
                     />
-                    <BoxConteudo flexDirection='column'>
-                        <TextoComBorda variant={window.innerWidth < 390 ? 'subTitle' : 'title'} color='primary'>
+                    <BoxConteudo
+                        tamanhoheight={tamanhoHeight ? 'true' : ''}
+                        tamanhowidth={tamanhoWidth ? 'true' : ''}
+                        flexDirection='column'
+                    >
+                        <TextoComBorda variant='title' color='primary'>
                             {textos.pinturas.cards[indicePinturas].titulo}
                         </TextoComBorda>
-                        <TextoComBorda onWheel={impedirPropagacao} sx={estiloBarra} variant={window.innerWidth < 390 ? 'text' : 'subTitle'} color='primary'>
+                        <TextoComBorda
+                            ref={textoComBarra}
+                            onWheel={(e) => impedirPropagacao(e)}
+                            sx={estiloBarra}
+                            variant='subTitle'
+                            color='primary'
+                        >
                             {textos.pinturas.cards[indicePinturas].texto}
                         </TextoComBorda>
                         <TextoComBorda
                             onClick={() => setMostrarConteudo(false)}
                             sx={{ '&:hover': { cursor: 'pointer' } }}
-                            variant={window.innerWidth < 390 ? 'subTitle' : 'title'}
+                            variant='title'
                             color='primary'
                         >
                             Clique para ver a imagem

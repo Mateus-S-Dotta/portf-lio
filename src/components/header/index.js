@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { TextoComBorda } from '../styles';
 import { BoxHeader } from './styles';
 
 function Header({ texto, pagina }) {
     return (
-        <BoxHeader>
+        <BoxHeader tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             {texto ? (
                 <TextoComBorda variant='text' color='primary'>
                     {texto}

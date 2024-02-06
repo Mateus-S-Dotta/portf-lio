@@ -4,10 +4,12 @@ import flechaEsquerda from '../../svg/flechaEsquerda.svg';
 import Card from '../card';
 import textos from '../textos';
 import { BoxCarrossel, BoxCentralizar, BoxConteudo } from '../styles';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 
 function Carrossel({ pagina }) {
     const [esquerda, setEsquerda] = useState(0);
     const [direita, setDireita] = useState(1);
+    const aa = false;
 
     function voltarCarrossel() {
         const index = textos[pagina].cards.length - 1;
@@ -54,7 +56,7 @@ function Carrossel({ pagina }) {
     }
 
     return (
-        <BoxCentralizar>
+        <BoxCentralizar tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             <BoxCarrossel>
                 <img onClick={() => voltarCarrossel()} className='hover' src={flechaEsquerda} alt='flecha para esquerda' />
                 <BoxConteudo>
@@ -65,13 +67,15 @@ function Carrossel({ pagina }) {
                         foto={textos[pagina].cards[esquerda].foto}
                         link={textos[pagina].cards[esquerda].link}
                     />
-                    <Card
-                        variant={(pagina === 'curiosidades' || pagina === 'habilidades') ? 'subTitle' : 'title'}
-                        titulo={textos[pagina].cards[direita].titulo}
-                        texto={textos[pagina].cards[direita].texto}
-                        foto={textos[pagina].cards[direita].foto}
-                        link={textos[pagina].cards[direita].link}
-                    />
+                    {aa && (
+                        <Card
+                            variant={(pagina === 'curiosidades' || pagina === 'habilidades') ? 'subTitle' : 'title'}
+                            titulo={textos[pagina].cards[direita].titulo}
+                            texto={textos[pagina].cards[direita].texto}
+                            foto={textos[pagina].cards[direita].foto}
+                            link={textos[pagina].cards[direita].link}
+                        />
+                    )}
                 </BoxConteudo>
                 <img onClick={() => avancarCarrossel()} className='hover' src={flechaDireita} alt='flecha para direita' />
             </BoxCarrossel>

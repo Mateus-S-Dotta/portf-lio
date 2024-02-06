@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxBotoes, BoxTextos, TextoComBorda } from '../styles';
 import textos from '../textos';
 
@@ -16,10 +17,16 @@ function Botoes({ pagina }) {
     } else if (pagina === 'trabalhos') {
         link1 = '/programacao';
         link2 = '/design';
-    };
+    }
 
     return (
-        <BoxBotoes sx={{ paddingTop: '3.2rem' }}>
+        <BoxBotoes
+            sx={{
+                paddingTop: tamanhoWidth || tamanhoHeight ? '1.6rem' : '3.2rem',
+                flexDirection: tamanhoWidth & !tamanhoHeight ? 'column' : !tamanhoWidth & tamanhoHeight ? 'row' : tamanhoWidth & tamanhoHeight ? 'column' : 'row',
+                gap: tamanhoWidth || tamanhoHeight ? '0.8rem' : '3.2rem'
+            }}
+        >
             <BoxTextos onClick={() => navigate(link1)} sx={{ '&:hover': { cursor: 'pointer' } }}>
                 <TextoComBorda variant='title' color='primary'>
                     {textos[pagina].opcaoLinha1}

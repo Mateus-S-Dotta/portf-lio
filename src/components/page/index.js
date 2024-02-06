@@ -65,7 +65,7 @@ function Page({ pagina }) {
                 setEdicao(false);
             }, 1000);
         };
-    };
+    }
 
     return (
         <BoxImagem

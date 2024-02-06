@@ -1,9 +1,10 @@
 import doubleArrow from '../../svg/doubleArrow.svg';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxFooter, TextoComBorda } from '../styles';
 
 function RoleParaBaixo() {
     return (
-        <BoxFooter>
+        <BoxFooter tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             <TextoComBorda variant='title' color='primary'>
                 Role Para Baixo
             </TextoComBorda>

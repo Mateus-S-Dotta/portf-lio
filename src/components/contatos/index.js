@@ -1,11 +1,12 @@
 import git from '../../svg/git.svg';
 import linkedin from '../../svg/linkedin.svg';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxFooter, TextoComBorda } from '../styles';
 import { BoxIcones } from './styles';
 
 function Contatos() {
     return (
-        <BoxFooter>
+        <BoxFooter tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             <TextoComBorda variant='title' color='primary'>
                 Contatos
             </TextoComBorda>

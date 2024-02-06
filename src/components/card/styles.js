@@ -2,7 +2,8 @@ import { Box, styled } from '@mui/material';
 
 const BoxCard = styled(Box)`
     max-width: 58.6rem;
-    height: 26rem;
+    width: 60vw;
+    /* max-height: 26rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

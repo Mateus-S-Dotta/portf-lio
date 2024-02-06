@@ -13,12 +13,14 @@ const BoxBotoes = styled(Box)`
 const BoxTextos = styled(BoxBotoes)`
     align-items: center;
     flex-direction: column;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
 `;
 
 const BoxFooter = styled(BoxTextos)`
     position: absolute;
     bottom: 0;
-    min-height: 12.5rem;
+    min-height: ${(({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '10.6rem' : '12.5rem'))};
     padding-bottom: 1.6rem;
     gap: 0.4rem;
 `;
@@ -36,8 +38,8 @@ const BoxCentralizar = styled(Box)`
     height: 100%;
     display: flex;
     justify-content: center;
-    padding-left: 4.8rem;
-    padding-right: 4.8rem;
+    padding-left: ${(({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '1.6rem' : '4.8rem'))};
+    padding-right: ${(({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '1.6rem' : '4.8rem'))};
 `;
 
 const BoxConteudo = styled(Box)`
@@ -45,7 +47,7 @@ const BoxConteudo = styled(Box)`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.6rem;
+    gap: ${(({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '0.8rem' : '1.6rem'))};
     text-align: center;
 `;
 
