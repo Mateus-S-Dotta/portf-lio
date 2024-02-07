@@ -69,7 +69,7 @@ function Page({ pagina }) {
 
     return (
         <BoxImagem
-            sx={!mostrarConteudo && { '&:hover': { cursor: 'pointer' } }}
+            sx={!mostrarConteudo && { cursor: 'pointer' }}
             onClick={() => alterarMostrarConteudo()}
             sombra={sombra}
             image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
@@ -98,7 +98,7 @@ function Page({ pagina }) {
             {mostrarConteudo && (passos === 3 ? (
                 <Contatos />
             ) : (
-                <Box sx={{ '&:hover': { cursor: 'pointer' } }} onClick={() => setPassos(passos + 1)}>
+                <Box sx={{ cursor: 'pointer' }} onClick={() => setPassos(passos + 1)}>
                     <RoleParaBaixo />
                 </Box>
             ))}

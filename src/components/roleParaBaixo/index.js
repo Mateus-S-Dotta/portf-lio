@@ -1,3 +1,4 @@
+import { Link } from '@mui/material';
 import doubleArrow from '../../svg/doubleArrow.svg';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxFooter, TextoComBorda } from '../styles';
@@ -5,10 +6,12 @@ import { BoxFooter, TextoComBorda } from '../styles';
 function RoleParaBaixo() {
     return (
         <BoxFooter tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
-            <TextoComBorda variant='title' color='primary'>
-                Role Para Baixo
-            </TextoComBorda>
-            <img src={doubleArrow} alt='double arrow' style={{ width: '3.2rem', height: '3.2rem', color: 'white' }} />
+            <Link>
+                <TextoComBorda variant='title' color='primary' pointer='true'>
+                    Role Para Baixo
+                </TextoComBorda>
+            </Link>
+            <img src={doubleArrow} alt='double arrow' className='hover' />
         </BoxFooter>
     );
 };

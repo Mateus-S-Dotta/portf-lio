@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxBotoes, BoxTextos, TextoComBorda } from '../styles';
 import textos from '../textos';
+import { Box, Link } from '@mui/material';
+import iconeLink from '../../svg/link.svg';
 
 function Botoes({ pagina }) {
     const navigate = useNavigate();
@@ -27,22 +29,43 @@ function Botoes({ pagina }) {
                 gap: tamanhoWidth || tamanhoHeight ? '0.8rem' : '3.2rem'
             }}
         >
-            <BoxTextos onClick={() => navigate(link1)} sx={{ '&:hover': { cursor: 'pointer' } }}>
-                <TextoComBorda variant='title' color='primary'>
-                    {textos[pagina].opcaoLinha1}
-                </TextoComBorda>
-                <TextoComBorda variant='title' color='primary'>
-                    {textos[pagina].opcao1Linha2}
-                </TextoComBorda>
-            </BoxTextos>
-            <BoxTextos onClick={() => navigate(link2)} sx={{ '&:hover': { cursor: 'pointer' } }}>
-                <TextoComBorda variant='title' color='primary'>
-                    {textos[pagina].opcaoLinha1}
-                </TextoComBorda>
-                <TextoComBorda variant='title' color='primary'>
-                    {textos[pagina].opcao2Linha2}
-                </TextoComBorda>
-            </BoxTextos>
+            <Link width='100%'>
+                <BoxTextos onClick={() => navigate(link1)} pointer='true'>
+                    <TextoComBorda
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                        }}
+                        variant='title'
+                        color='primary'
+                        pointer='true'
+                    >
+                        <img alt='icone entrar no link' src={iconeLink} />
+                        {textos[pagina].opcao1}
+                    </TextoComBorda>
+                </BoxTextos>
+            </Link>
+            <Link width='100%'>
+                <BoxTextos onClick={() => navigate(link2)} pointer='true'>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.8rem'
+                    }}
+                    >
+                        <img alt='icone entrar no link' src={iconeLink} />
+                        <TextoComBorda
+                            variant='title'
+                            color='primary'
+                            pointer='true'
+                        >
+                            {textos[pagina].opcao2}
+                        </TextoComBorda>
+
+                    </Box>
+                </BoxTextos>
+            </Link>
         </BoxBotoes>
     );
 };

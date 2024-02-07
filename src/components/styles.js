@@ -3,6 +3,7 @@ import { Box, Typography, styled } from '@mui/material';
 const TextoComBorda = styled(Typography)`
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: center;
+    cursor: ${({ pointer }) => (pointer === 'true' ? 'pointer' : 'auto')};
 `;
 
 const BoxBotoes = styled(Box)`
@@ -15,6 +16,7 @@ const BoxTextos = styled(BoxBotoes)`
     flex-direction: column;
     padding-right: 1.6rem;
     padding-left: 1.6rem;
+    cursor: ${({ pointer }) => (pointer === 'true' ? 'pointer' : 'auto')};
 `;
 
 const BoxFooter = styled(BoxTextos)`

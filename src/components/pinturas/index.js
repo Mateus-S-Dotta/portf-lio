@@ -59,7 +59,7 @@ function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mos
                         </TextoComBorda>
                         <TextoComBorda
                             onClick={() => setMostrarConteudo(false)}
-                            sx={{ '&:hover': { cursor: 'pointer' } }}
+                            pointer='true'
                             variant='title'
                             color='primary'
                         >
