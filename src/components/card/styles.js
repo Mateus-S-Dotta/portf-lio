@@ -6,7 +6,7 @@ const BoxCard = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 3.2rem;
+    gap: ${(({ tamanhoheight, tamanhowidth }) => (tamanhoheight || tamanhowidth ? '0.8rem' : '3.2rem'))};
     border: ${({ borda }) => (borda && ('#fff 1px solid'))};
     padding: 1.6rem;
     cursor: ${({ borda }) => (borda ? 'pointer' : 'auto')};

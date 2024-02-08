@@ -7,13 +7,13 @@ function Header({ texto, pagina }) {
     return (
         <BoxHeader tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             {texto ? (
-                <TextoComBorda variant='text' color='primary'>
+                <TextoComBorda pointer='true' variant='text' color='primary'>
                     {texto}
                 </TextoComBorda>
             ) : (
                 <>
                     <Link to='/inicio'>
-                        <TextoComBorda variant='text' color='primary'>
+                        <TextoComBorda pointer='true' variant='text' color='primary'>
                             Inicio
                         </TextoComBorda>
                     </Link>
@@ -23,7 +23,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/sobremim'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Sobre Mim
                                 </TextoComBorda>
                             </Link>
@@ -35,7 +35,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/habilidades'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Habilidades
                                 </TextoComBorda>
                             </Link>
@@ -47,7 +47,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/curiosidades'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Curiosidades
                                 </TextoComBorda>
                             </Link>
@@ -59,7 +59,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/pinturas'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Pinturas
                                 </TextoComBorda>
                             </Link>
@@ -71,7 +71,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/trabalhos'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Trabalhos
                                 </TextoComBorda>
                             </Link>
@@ -83,7 +83,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/programacao'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Programação
                                 </TextoComBorda>
                             </Link>
@@ -95,7 +95,7 @@ function Header({ texto, pagina }) {
                                 /
                             </TextoComBorda>
                             <Link to='/design'>
-                                <TextoComBorda variant='text' color='primary'>
+                                <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Design
                                 </TextoComBorda>
                             </Link>

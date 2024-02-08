@@ -5,11 +5,11 @@ import Botoes from '../botoes';
 import Carrossel from '../carrossel';
 import Contatos from '../contatos';
 import Header from '../header';
+import Pinturas from '../pinturas';
 import RoleParaBaixo from '../roleParaBaixo';
 import TextoPrincipal from '../textoPrincipal';
 import textos from '../textos';
 import { BoxImagem } from './styles';
-import Pinturas from '../pinturas';
 
 function Page({ pagina }) {
     const [passos, setPassos] = useState(1);
@@ -75,7 +75,7 @@ function Page({ pagina }) {
             image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
             onWheel={(e) => rolamento(e)}
         >
-            <Header pagina={pagina} />
+            <Header texto={!mostrarConteudo ? 'Clique na tela para voltar' : ''} pagina={pagina} />
             {mostrarConteudo ? ((passos > 1) && (
                 <TextoPrincipal pagina={pagina} />
             )) : (

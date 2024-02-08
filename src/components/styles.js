@@ -51,6 +51,10 @@ const BoxConteudo = styled(Box)`
     flex-wrap: wrap;
     gap: ${(({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '0.8rem' : '1.6rem'))};
     text-align: center;
+    overflow-y: ${(({ scroll }) => (scroll ? 'auto' : 'hidden'))};
+    scrollbar-width: ${(({ scroll }) => (scroll ? 'thin' : ''))};
+    scrollbar-color: ${(({ scroll }) => (scroll ? '#fff #00000000' : ''))};
+
 `;
 
 
@@ -62,5 +66,4 @@ export {
     BoxCarrossel,
     BoxConteudo,
     BoxCentralizar
-
 };

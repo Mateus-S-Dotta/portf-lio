@@ -2,8 +2,8 @@ import { createTheme } from '@mui/material';
 
 export const tamanhoWidth = window.innerWidth < 450;
 export const tamanhoHeight = window.innerHeight < 450;
-const tamanhoWidthFonte = window.innerWidth < 700;
-const tamanhoHeightFonte = window.innerHeight < 500;
+export const tamanhoWidthFonte = window.innerWidth < 700;
+export const tamanhoHeightFonte = window.innerHeight < 500;
 
 export const theme = createTheme({
     palette: {
