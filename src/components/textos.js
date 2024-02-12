@@ -1,7 +1,5 @@
 import atenas from '../imgs/atenas.jpg';
-import ivan from '../imgs/ivan.jpg';
 import sisifo from '../imgs/sisifo.jpg';
-import prudencia from '../imgs/prudencia.jpg';
 import ceia from '../imgs/ceia.jpg';
 import napoleao from '../imgs/napoleao.jpg';
 import adao from '../imgs/adao.jpg';
@@ -16,18 +14,15 @@ import pet from '../imgs/pet.png';
 
 const textos = {
     inicio: {
-        linha1: 'Mateus Salaibb Dotta',
-        linha2: 'Sou Programador e Designer',
+        linha1: 'Portfólio Mateus Dotta',
+        linha2: 'Programador e Designer',
         opcao1: 'Sobre Mim',
         opcao2: 'Meus Trabalhos',
         foto: atenas,
-    },
-    sobremim: {
-        linha1: 'Há muito para conhecer',
-        linha2: 'Sobre Mim',
-        opcao1: 'Curiosidades e Outros',
-        opcao2: 'Minhas Habilidades',
-        foto: ivan,
+        cards: [{
+            titulo: 'Sobre Mim',
+            texto: 'Meu nome é Mateus, tenho 20 anos e sou Programador Full Stack e Designer. Já me envolvi em vários projetos, principalmente nos cursos que fiz, no Instituto Caldeira e na Cubos Academy. Estou em busca da minha primeira oportunidade profissional na área de tecnologia, mas já trabalhei desde os 11 anos, entregando panfletos, atendente de locadora (sim, locadora de filmes), jardineiro, e muitos outros. Minha maior experiência profissional foi em imobiliária, como agenciador, onde lidava muito com o público. Obrigado.'
+        }]
     },
     trabalhos: {
         linha1: 'Desenvolvi trabalhos de',
@@ -35,36 +30,6 @@ const textos = {
         opcao1: 'Trabalhos de Programação',
         opcao2: 'Trabalhos de Design',
         foto: sisifo,
-    },
-    curiosidades: {
-        linha1: 'Minhas',
-        linha2: 'Curiosidades',
-        foto: prudencia,
-        cards: [{
-            titulo: 'Veja as pinturas',
-            texto: 'Clique aqui e veja um pouco sobre cada uma das pinturas e entenda por que elas estão neste portfólio.',
-            link: '/pinturas'
-        }, {
-            titulo: 'Já fui agenciador',
-            texto: 'Já trabalhei em muitos setores, mas o principal foi atendimento ao cliente em duas imobiliárias. Tinha de captar imóveis para nosso catálogo de vendas.',
-            link: false
-        }, {
-            titulo: 'Livros',
-            texto: 'Tenho uma biblioteca com mais de 80 livros. Estou ainda no processo de ler tudo.',
-            link: false
-        }, {
-            titulo: 'Xadrez',
-            texto: 'Gosto bastante de jogar xadrez. Me considero jogar bem.',
-            link: false
-        }, {
-            titulo: 'Poemas',
-            texto: 'Tenho aproximadamente 15 poemas decorados.',
-            link: false
-        }, {
-            titulo: 'Cozinha',
-            texto: 'Sou o melhor cozinheiro de 20 anos da minha casa. Com esses critérios, ninguém cozinha melhor que eu.',
-            link: false
-        }]
     },
     habilidades: {
         linha1: 'Minhas',
@@ -169,19 +134,11 @@ const textos = {
         linha2: 'Pinturas',
         cards: [{
             titulo: 'Escola de Atenas, Rafael',
-            texto: 'Essa pintura representa, em alguma medida, todos os filósofos gregos. No meio da pintura, está Platão (à esquerda) e Aristóteles (à direita). Platão aponta para cima, para representar o “Mundo das Ideias”, um conceito abordado em vários dos seus diálogos. Aristóteles aponta para o chão, focando na realidade, assim como na sua filosofia. Outra interpretação é que ele está apontando para frente, convidando o expectador para a filosofia. Sinta-se no Hall de entrada do meu portifólio e siga o convite.',
+            texto: 'Essa pintura representa, em alguma medida, todos os filósofos gregos. No meio da pintura, estaõ Platão (à esquerda) e Aristóteles (à direita). Platão aponta para cima, para representar o “Mundo das Ideias”, um conceito abordado em vários dos seus diálogos. Aristóteles aponta para o chão, focando na realidade, assim como na sua filosofia. Outra interpretação é que ele está apontando para frente, convidando o expectador para a filosofia. Sinta-se no Hall de entrada do meu portifólio e siga o convite.',
             foto: atenas
         }, {
-            titulo: 'Ivan, o Terrível e seu filho Ivan, Répin',
-            texto: 'Essa pintura mostra Ivan, O Terrível, o primeiro Czar da Rússia, abraçado ao seu filho. Ivan matou o próprio filho e existem muitas teorias sobre o caso, uma delas é que Ivan o matou com o cetro real, com pauladas na cabeça. Não se tem certeza também se ele de fato se arrependeu de ter feito isso, mas com muita sutileza, a pintura mostra que sim. Eu acho o tema história da Rússia muito interessante, e essa pintura mostra que o Czarismo não começou bem. Por conta da sutileza e pela história, gosto bastante desse quadro.',
-            foto: ivan
-        }, {
-            titulo: 'Prudência, Luca Giordano',
-            texto: 'Essa pintura mostra a virtude da prudência, que significa, pela definição, escolher o melhor meio para determinado fim. Sinceramente, pouco sei da relação entre a virtude e a pintura. A prudência é uma virtude prática e intelectual ao mesmo tempo, pois é “decisão”, algo pessoal e que necessita reflexão, dos “meios”, às nossas ações no mundo. É chamada de a mãe das virtudes, pois todas as nossas escolhas, mesmo as virtuosas, precisam ser tomadas com base nela. Está no curiosidades pois eu tento sempre torná-la mais presente nas minhas decisões.',
-            foto: prudencia
-        }, {
             titulo: 'Incêndio de Moscou, Mazuróvski',
-            texto: 'Essa pintura mostra quando Napoleão chega a Moscou em 1812, com a cidade em chamas. Como em qualquer acontecimento histórico, existem milhões de fatos e interpretações. Alguns atribuem o fogo aos franceses, outros aos russos. Mas os russos utilizaram a estratégia da “terra arrasada” durante as invasões, o que confirma um pouco a teoria de os russos terem jogado fogo na cidade. Napoleão, foi muito polemico, mas inegavelmente, foi um grande estrategista de guerra. Ele de fato tinha muitas habilidades, e por isso essa pintura está nesta seção.',
+            texto: 'Essa pintura mostra quando Napoleão chega a Moscou em 1812, com a cidade em chamas. Como em qualquer acontecimento histórico, existem milhões de fatos e interpretações. Alguns atribuem o fogo aos franceses, outros aos russos. Mas os russos utilizaram a estratégia da “terra arrasada” durante as invasões, o que confirma um pouco a teoria de os russos terem jogado fogo na cidade. Napoleão, foi muito polêmico, mas inegavelmente, foi um grande estrategista de guerra. Ele de fato tinha muitas habilidades, e por isso essa pintura está nesta seção.',
             foto: napoleao
         }, {
             titulo: 'Sísifo, de Tiziano',

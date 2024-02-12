@@ -10,7 +10,6 @@ function Carrossel({ pagina }) {
         e.stopPropagation();
     }
 
-
     return (
         <BoxCentralizar tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             <BoxCarrossel>

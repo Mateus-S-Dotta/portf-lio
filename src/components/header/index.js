@@ -17,18 +17,6 @@ function Header({ texto, pagina }) {
                             Inicio
                         </TextoComBorda>
                     </Link>
-                    {(pagina === 'sobremim' || pagina === 'curiosidades' || pagina === 'habilidades' || pagina === 'pinturas') && (
-                        <>
-                            <TextoComBorda variant='text' color='primary'>
-                                /
-                            </TextoComBorda>
-                            <Link to='/sobremim'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
-                                    Sobre Mim
-                                </TextoComBorda>
-                            </Link>
-                        </>
-                    )}
                     {pagina === 'habilidades' && (
                         <>
                             <TextoComBorda variant='text' color='primary'>
@@ -37,18 +25,6 @@ function Header({ texto, pagina }) {
                             <Link to='/habilidades'>
                                 <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Habilidades
-                                </TextoComBorda>
-                            </Link>
-                        </>
-                    )}
-                    {(pagina === 'curiosidades' || pagina === 'pinturas') && (
-                        <>
-                            <TextoComBorda variant='text' color='primary'>
-                                /
-                            </TextoComBorda>
-                            <Link to='/curiosidades'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
-                                    Curiosidades
                                 </TextoComBorda>
                             </Link>
                         </>

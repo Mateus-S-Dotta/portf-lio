@@ -9,9 +9,7 @@ export default function MainRoutes() {
             <Routes>
                 <Route path='*' element={<Page pagina='inicio' />} />
                 <Route path='/inicio' element={<Page pagina='inicio' />} />
-                <Route path='/sobremim' element={<Page pagina='sobremim' />} />
                 <Route path='/trabalhos' element={<Page pagina='trabalhos' />} />
-                <Route path='/curiosidades' element={<Page pagina='curiosidades' />} />
                 <Route path='/habilidades' element={<Page pagina='habilidades' />} />
                 <Route path='/programacao' element={<Page pagina='programacao' />} />
                 <Route path='/design' element={<Page pagina='design' />} />

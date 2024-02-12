@@ -1,11 +1,12 @@
+import { Link } from '@mui/material';
 import flechaDireita from '../../svg/flechaDireita.svg';
 import flechaEsquerda from '../../svg/flechaEsquerda.svg';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
-import { BoxCarrossel, BoxCentralizar, BoxConteudo, TextoComBorda } from '../styles';
+import { BoxCarrossel, BoxCentralizar, BoxConteudo, BoxTextos, TextoComBorda } from '../styles';
 import textos from '../textos';
 import { useEffect, useRef, useState } from 'react';
 
-function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mostrarConteudo }) {
+function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mostrarConteudo, pagina }) {
     const tamanho = (window.innerHeight - 75 - 125 - 16 - 16) / 2;
     const textoComBarra = useRef(null);
     const [alturaElemento, setAlturaElemento] = useState(0);
@@ -34,19 +35,23 @@ function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mos
         <BoxCentralizar tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             {mostrarConteudo && (
                 <BoxCarrossel>
-                    <img
-                        onClick={() => mudarIndicePinturas('esquerda')}
-                        className='hover'
-                        src={flechaEsquerda}
-                        alt='flecha para esquerda'
-                    />
+                    {
+                        pagina === 'pinturas' && (
+                            <img
+                                onClick={() => mudarIndicePinturas('esquerda')}
+                                className='hover'
+                                src={flechaEsquerda}
+                                alt='flecha para esquerda'
+                            />
+                        )
+                    }
                     <BoxConteudo
                         tamanhoheight={tamanhoHeight ? 'true' : ''}
                         tamanhowidth={tamanhoWidth ? 'true' : ''}
                         flexDirection='column'
                     >
                         <TextoComBorda variant='title' color='primary'>
-                            {textos.pinturas.cards[indicePinturas].titulo}
+                            {textos[pagina].cards[indicePinturas].titulo}
                         </TextoComBorda>
                         <TextoComBorda
                             ref={textoComBarra}
@@ -55,18 +60,69 @@ function Pinturas({ mudarIndicePinturas, indicePinturas, setMostrarConteudo, mos
                             variant='subTitle'
                             color='primary'
                         >
-                            {textos.pinturas.cards[indicePinturas].texto}
+                            {textos[pagina].cards[indicePinturas].texto}
                         </TextoComBorda>
-                        <TextoComBorda
-                            onClick={() => setMostrarConteudo(false)}
-                            pointer='true'
-                            variant='title'
-                            color='primary'
-                        >
-                            Clique para ver a imagem
-                        </TextoComBorda>
+                        {
+                            pagina === 'pinturas' ? (
+                                <Link>
+                                    <TextoComBorda
+                                        onClick={() => setMostrarConteudo(false)}
+                                        pointer='true'
+                                        variant='title'
+                                        color='primary'
+                                    >
+                                        Clique para ver a imagem
+                                    </TextoComBorda>
+                                </Link>
+                            ) : (
+                                <BoxTextos gap='8px'>
+                                    <a style={{ textDecoration: 'none' }} alt='link para habilidades' href='/habilidades'>
+                                        <Link>
+                                            <TextoComBorda
+                                                pointer='true'
+                                                variant='title'
+                                                color='primary'
+                                            >
+                                                Veja Habilidades
+                                            </TextoComBorda>
+                                        </Link>
+                                    </a>
+                                    <a style={{ textDecoration: 'none' }} alt='link para habilidades' href='/trabalhos'>
+                                        <Link>
+                                            <TextoComBorda
+                                                pointer='true'
+                                                variant='title'
+                                                color='primary'
+                                            >
+                                                Veja Trabalhos
+                                            </TextoComBorda>
+                                        </Link>
+                                    </a>
+                                    <a style={{ textDecoration: 'none' }} alt='link para habilidades' href='/pinturas'>
+                                        <Link>
+                                            <TextoComBorda
+                                                pointer='true'
+                                                variant='title'
+                                                color='primary'
+                                            >
+                                                Veja as Pinturas
+                                            </TextoComBorda>
+                                        </Link>
+                                    </a>
+                                </BoxTextos>
+                            )
+                        }
                     </BoxConteudo>
-                    <img onClick={() => mudarIndicePinturas('')} className='hover' src={flechaDireita} alt='flecha para direita' />
+                    {
+                        pagina === 'pinturas' && (
+                            <img
+                                onClick={() => mudarIndicePinturas('')}
+                                className='hover'
+                                src={flechaDireita}
+                                alt='flecha para direita'
+                            />
+                        )
+                    }
                 </BoxCarrossel>
             )}
         </BoxCentralizar>

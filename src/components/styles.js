@@ -14,8 +14,8 @@ const BoxBotoes = styled(Box)`
 const BoxTextos = styled(BoxBotoes)`
     align-items: center;
     flex-direction: column;
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
     cursor: ${({ pointer }) => (pointer === 'true' ? 'pointer' : 'auto')};
 `;
 
@@ -54,7 +54,6 @@ const BoxConteudo = styled(Box)`
     overflow-y: ${(({ scroll }) => (scroll ? 'auto' : 'hidden'))};
     scrollbar-width: ${(({ scroll }) => (scroll ? 'thin' : ''))};
     scrollbar-color: ${(({ scroll }) => (scroll ? '#fff #00000000' : ''))};
-
 `;
 
 

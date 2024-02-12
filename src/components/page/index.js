@@ -30,6 +30,9 @@ function Page({ pagina }) {
     }, [location.pathname]);
 
     function mudarIndicePinturas(direcao) {
+        if (pagina === 'inicio')
+            return
+
         if (direcao === 'esquerda') {
             if (indicePinturas === 0) {
                 return setIndicePinturas(textos.pinturas.cards.length - 1);
@@ -84,8 +87,9 @@ function Page({ pagina }) {
             {((passos === 3) && (
                 carrossel ? (
                     <Carrossel pagina={pagina} />
-                ) : pagina === 'pinturas' ? (
+                ) : pagina === 'pinturas' || pagina === 'inicio' ? (
                     <Pinturas
+                        pagina={pagina}
                         setMostrarConteudo={setMostrarConteudo}
                         mostrarConteudo={mostrarConteudo}
                         indicePinturas={indicePinturas}
