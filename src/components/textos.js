@@ -21,7 +21,7 @@ const textos = {
         foto: storm,
         cards: [{
             titulo: 'Sobre Mim',
-            texto: 'Meu nome é Mateus, tenho 20 anos e sou Programador Full Stack e Designer. Já me envolvi em vários projetos, principalmente nos cursos que fiz, no Instituto Caldeira e na Cubos Academy. Estou em busca da minha primeira oportunidade profissional na área de tecnologia, mas já trabalhei desde os 11 anos, entregando panfletos, atendente de locadora (sim, locadora de filmes), jardineiro, e muitos outros. Minha maior experiência profissional foi em imobiliária, como agenciador, onde lidava muito com o público. Obrigado.'
+            texto: 'Meu nome é Mateus, tenho 20 anos e sou Programador Full Stack e Designer. Já me envolvi em vários projetos de programação e Design, principalmente nos cursos que fiz, no Instituto Caldeira e na Cubos Academy. Estou em busca da minha primeira oportunidade profissional na área de tecnologia, mas já trabalhei desde os 11 anos, entregando panfletos, atendente de locadora (sim, locadora de filmes), jardineiro, e muitos outros. Minhas maiores experiências profissionais foram em imobiliárias, como agenciador, onde lidava muito com o público e convencia os proprietários a colocar os imóveis a venda conosco. Obrigado.'
         }]
     },
     trabalhos: {
@@ -37,7 +37,7 @@ const textos = {
         foto: napoleao,
         cards: [{
             titulo: 'JS',
-            texto: 'Com JavaScript, consigo desenvolver tanto Back-End quanto Front-End. Em Back com API REST e no Front com React.',
+            texto: 'Com JavaScript, sou capaz de desenvolver tanto o Back-End, utilizando API REST, quanto o Front-End, com React.',
             link: false
         }, {
             titulo: 'Comunicação',
@@ -45,11 +45,11 @@ const textos = {
             link: false
         }, {
             titulo: 'React',
-            texto: 'Consigo usar esse framework com relativa maestria. Todo este portfólio foi desenvolvido em React.',
+            texto: 'Tenho um domínio relativo do React e todo este portfólio foi desenvolvido utilizando esta tecnologia.',
             link: false
         }, {
             titulo: 'Resolução de Problemas',
-            texto: 'Costumo pensar sempre em “como fazer isso funcionar melhor?”. ',
+            texto: 'Costumo pensar sempre em “como fazer isso funcionar melhor?”.',
             link: false
         }, {
             titulo: 'GitHub',
@@ -61,7 +61,7 @@ const textos = {
             link: false
         }, {
             titulo: 'MUI',
-            texto: 'Uso Material Design nos meus projetos React. Este portfólio todo foi desenvolvido utilizando MUI.',
+            texto: 'Utilizo Material Design nos meus projetos React, e este portfólio foi desenvolvido inteiramente utilizando MUI.',
             link: false
         }, {
             titulo: 'Trabalho em Equipe',
@@ -69,11 +69,11 @@ const textos = {
             link: false
         }, {
             titulo: 'Figma',
-            texto: 'Uso o Figma como ferramenta de Design. Tenho bastante maestria na ferramenta. Desenvolvi o portfólio com ele. Clique e veja.',
+            texto: 'Utilizo o Figma como ferramenta de design, tenho bastante maestria nela e desenvolvi meu portfólio utilizando-a. Clique aqui para ver.',
             link: false
         }, {
             titulo: 'Adaptalibidade',
-            texto: 'Ao utilizar quaisquer ferramentas, consigo utilizá-la para cumprir meus objetivos. E me adapto bastante a mudança de equipe, regras ou lideranças.',
+            texto: 'Ao utilizar qualquer ferramenta, consigo utilizá-la para cumprir meus objetivos. Além disso, me adapto facilmente a mudanças de equipe, regras ou lideranças.',
             link: false
         }]
     },
