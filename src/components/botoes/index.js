@@ -1,9 +1,9 @@
+import { Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
-import { BoxBotoes, BoxTextos, TextoComBorda } from '../styles';
-import textos from '../textos';
-import { Box, Link } from '@mui/material';
 import iconeLink from '../../svg/link.svg';
+import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
+import { BoxBotoes, BoxTextos, TextoComIcone } from '../styles';
+import textos from '../textos';
 
 function Botoes({ pagina }) {
     const navigate = useNavigate();
@@ -31,39 +31,26 @@ function Botoes({ pagina }) {
         >
             <Link width='100%'>
                 <BoxTextos onClick={() => navigate(link1)} pointer='true'>
-                    <TextoComBorda
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '4px'
-                        }}
+                    <TextoComIcone
                         variant='title'
                         color='primary'
                         pointer='true'
                     >
                         <img alt='icone entrar no link' src={iconeLink} />
                         {textos[pagina].opcao1}
-                    </TextoComBorda>
+                    </TextoComIcone>
                 </BoxTextos>
             </Link>
             <Link width='100%'>
                 <BoxTextos onClick={() => navigate(link2)} pointer='true'>
-                    <Box sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.8rem'
-                    }}
+                    <TextoComIcone
+                        variant='title'
+                        color='primary'
+                        pointer='true'
                     >
                         <img alt='icone entrar no link' src={iconeLink} />
-                        <TextoComBorda
-                            variant='title'
-                            color='primary'
-                            pointer='true'
-                        >
-                            {textos[pagina].opcao2}
-                        </TextoComBorda>
-
-                    </Box>
+                        {textos[pagina].opcao2}
+                    </TextoComIcone>
                 </BoxTextos>
             </Link>
         </BoxBotoes>

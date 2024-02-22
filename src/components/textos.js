@@ -1,4 +1,4 @@
-import atenas from '../imgs/atenas.jpg';
+import storm from '../imgs/storm.jpg';
 import sisifo from '../imgs/sisifo.jpg';
 import ceia from '../imgs/ceia.jpg';
 import napoleao from '../imgs/napoleao.jpg';
@@ -18,7 +18,7 @@ const textos = {
         linha2: 'Programador e Designer',
         opcao1: 'Sobre Mim',
         opcao2: 'Meus Trabalhos',
-        foto: atenas,
+        foto: storm,
         cards: [{
             titulo: 'Sobre Mim',
             texto: 'Meu nome é Mateus, tenho 20 anos e sou Programador Full Stack e Designer. Já me envolvi em vários projetos, principalmente nos cursos que fiz, no Instituto Caldeira e na Cubos Academy. Estou em busca da minha primeira oportunidade profissional na área de tecnologia, mas já trabalhei desde os 11 anos, entregando panfletos, atendente de locadora (sim, locadora de filmes), jardineiro, e muitos outros. Minha maior experiência profissional foi em imobiliária, como agenciador, onde lidava muito com o público. Obrigado.'
@@ -133,24 +133,24 @@ const textos = {
         linha1: 'Sobre as',
         linha2: 'Pinturas',
         cards: [{
-            titulo: 'Escola de Atenas, Rafael',
-            texto: 'Essa pintura representa, em alguma medida, todos os filósofos gregos. No meio da pintura, estaõ Platão (à esquerda) e Aristóteles (à direita). Platão aponta para cima, para representar o “Mundo das Ideias”, um conceito abordado em vários dos seus diálogos. Aristóteles aponta para o chão, focando na realidade, assim como na sua filosofia. Outra interpretação é que ele está apontando para frente, convidando o expectador para a filosofia. Sinta-se no Hall de entrada do meu portifólio e siga o convite.',
-            foto: atenas
+            titulo: 'A Storm in the Rocky Mountains, Albert Bierstadt',
+            texto: 'Essa pintura é maravilhosa. Essa pintura, muito característica do pintor e pintada em 1866, ainda é muito influente até hoje e parece muito atual. Quando pensamos em paisagens belas e épicas, sempre pensaremos próximo a estas pinturas. O que mais me impressiona é a quantidade de detalhes. Quaisquer zooms que demos, torna-se perceptível todos os detalhes. A qualidade das sombras e todos os detalhes de cada uma das centenas de árvores, enfim, tornam essa obra incrível.',
+            foto: storm
         }, {
             titulo: 'Incêndio de Moscou, Mazuróvski',
-            texto: 'Essa pintura mostra quando Napoleão chega a Moscou em 1812, com a cidade em chamas. Como em qualquer acontecimento histórico, existem milhões de fatos e interpretações. Alguns atribuem o fogo aos franceses, outros aos russos. Mas os russos utilizaram a estratégia da “terra arrasada” durante as invasões, o que confirma um pouco a teoria de os russos terem jogado fogo na cidade. Napoleão, foi muito polêmico, mas inegavelmente, foi um grande estrategista de guerra. Ele de fato tinha muitas habilidades, e por isso essa pintura está nesta seção.',
+            texto: 'Essa pintura mostra quando Napoleão chega a Moscou em 1812, com a cidade em chamas. Como em qualquer acontecimento histórico, existem milhões de fatos e interpretações. Alguns atribuem o fogo aos franceses, outros aos russos. Mas os russos utilizaram a estratégia da "terra arrasada" durante as invasões, o que reforça a teoria de que os russos possam ter incendiado a cidade. Napoleão foi muito polêmico, mas inegavelmente um grande estrategista de guerra. Ele de fato tinha muitas habilidades, por isso essa pintura está nesta seção.',
             foto: napoleao
         }, {
             titulo: 'Sísifo, de Tiziano',
-            texto: 'Essa pintura é de Sísifo, personagem grego que enganou a morte diversas vezes e por conta disso, recebeu como punição ser condenado a passar o restante da eternidade levando uma rocha para o topo de uma montanha e quando lá chegasse, a rocha cairia, tendo de fazer o serviço novamente. Existe uma versão dessa pintura onde Zeus é quem joga a pedra montanha a baixo. Aparentemente não é uma tarefa divertida, porém quando penso em pinturas sobre trabalhar, sempre me vem à cabeça. Por isso que está na seção “Trabalhos” do portfólio.',
+            texto: 'Essa pintura é de Sísifo, personagem grego que enganou a morte diversas vezes. Por conta disso, recebeu como punição ser condenado a passar o restante da eternidade levando uma rocha para o topo de uma montanha e, quando lá chegasse, a rocha cairia, tendo de fazer o serviço novamente. Existe uma versão dessa pintura onde Zeus é quem joga a rocha montanha a baixo. Embora não seja uma tarefa divertida, sempre me vem à cabeça quando penso em pinturas sobre o trabalho. Por isso, está na seção "Trabalhos" do portfólio.',
             foto: sisifo
         }, {
             titulo: 'A Última Ceia, da Vinci',
-            texto: 'Essa pintura é A Última Ceia, de Leonardo da Vinci. Pintada na parede de um refeitório de uma igreja, se tornou um clássico. Demorou muito tempo para esta pintura vir à minha mente para colocá-la na seção programação, mas realmente é difícil pensar em outra. Esse quadro é bastante matemático, por conta de suas proporções, tamanhos, separações, enfim. Jesus no centro, e em cada lado há uma porta, 4 janelas, o mesmo número de apóstolos, Por conta dessa matemática e proporção, era impossível não deixá-lo na seção programação.',
+            texto: 'Essa pintura é A Última Ceia, de Leonardo da Vinci. Pintada na parede de um refeitório de uma igreja, se tornou um clássico. Demorou muito tempo para que eu decidisse incluir esta pintura na seção de programação, mas realmente é difícil pensar em outra opção. Esse quadro é bastante matemático, por conta de suas proporções, tamanhos e separações. Jesus está no centro, e de cada lado há uma porta e 4 janelas, o mesmo número de apóstolos. Devido a essa matemática e proporção, era impossível não incluí-lo na seção de programação.',
             foto: ceia
         }, {
             titulo: 'A Criação De Adão, Michelangelo',
-            texto: 'Essa pintura é A Criação De Adão, Michelangelo. Pintada no teto da Capela Sistina. Há uma interpretação muito interessante dessa obra. Deus, que está à direita, está com o dedo totalmente esticado, porém Adão, à esquerda, não está. Como se Deus estivesse fazendo esforço para vir até nós e nós não. Sem contar a batida curiosidade de que o espaço vermelho onde Deus está tem o formato exato de um cérebro. Essa obra, por ser a “criação”, representa bem o Design, onde é extremamente importante o processo criativo e a criatividade.',
+            texto: 'Essa pintura é A Criação De Adão, Michelangelo. Pintada no teto da Capela Sistina. Há uma interpretação muito interessante dessa obra. Deus, que está à direita, está com o dedo totalmente esticado, porém Adão, à esquerda, parece mais relaxado, como se estivesse menos atento. Como se Deus estivesse se esforçando para alcançar Adão, enquanto Adão parece menos reativo. Sem contar a conhecida curiosidade de que o espaço vermelho onde Deus está tem o formato exato de um cérebro. Essa obra, por representar a "criação", reflete bem o Design, no qual o processo criativo e a criatividade são extremamente importantes.',
             foto: adao
         }]
     }

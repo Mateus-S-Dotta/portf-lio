@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { TextoComBorda } from '../styles';
 import { BoxHeader } from './styles';
+import { Link } from '@mui/material';
 
 function Header({ texto, pagina }) {
+    const navigate = useNavigate();
     return (
         <BoxHeader tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             {texto ? (
@@ -12,7 +14,7 @@ function Header({ texto, pagina }) {
                 </TextoComBorda>
             ) : (
                 <>
-                    <Link to='/inicio'>
+                    <Link onClick={() => navigate('/inicio')}>
                         <TextoComBorda pointer='true' variant='text' color='primary'>
                             Inicio
                         </TextoComBorda>
@@ -22,7 +24,7 @@ function Header({ texto, pagina }) {
                             <TextoComBorda variant='text' color='primary'>
                                 /
                             </TextoComBorda>
-                            <Link to='/habilidades'>
+                            <Link onClick={() => navigate('/habilidades')}>
                                 <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Habilidades
                                 </TextoComBorda>
@@ -34,7 +36,7 @@ function Header({ texto, pagina }) {
                             <TextoComBorda variant='text' color='primary'>
                                 /
                             </TextoComBorda>
-                            <Link to='/pinturas'>
+                            <Link onClick={() => navigate('/pinturas')}>
                                 <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Pinturas
                                 </TextoComBorda>
@@ -46,7 +48,7 @@ function Header({ texto, pagina }) {
                             <TextoComBorda variant='text' color='primary'>
                                 /
                             </TextoComBorda>
-                            <Link to='/trabalhos'>
+                            <Link onClick={() => navigate('/trabalhos')}>
                                 <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Trabalhos
                                 </TextoComBorda>
@@ -58,7 +60,7 @@ function Header({ texto, pagina }) {
                             <TextoComBorda variant='text' color='primary'>
                                 /
                             </TextoComBorda>
-                            <Link to='/programacao'>
+                            <Link onClick={() => navigate('/programacao')}>
                                 <TextoComBorda pointer='true' variant='text' color='primary'>
                                     Programação
                                 </TextoComBorda>

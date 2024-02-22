@@ -23,9 +23,11 @@ function Page({ pagina }) {
     useEffect(() => {
         setPassos(1);
         setEdicao(false);
+        setIndicePinturas(0);
         return () => {
             setPassos(1);
             setEdicao(false);
+            setIndicePinturas(0);
         }
     }, [location.pathname]);
 

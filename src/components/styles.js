@@ -6,6 +6,12 @@ const TextoComBorda = styled(Typography)`
     cursor: ${({ pointer }) => (pointer === 'true' ? 'pointer' : 'auto')};
 `;
 
+const TextoComIcone = styled(TextoComBorda)`
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+`;
+
 const BoxBotoes = styled(Box)`
     width: 100%;
     display: flex;
@@ -64,5 +70,6 @@ export {
     BoxBotoes,
     BoxCarrossel,
     BoxConteudo,
-    BoxCentralizar
+    BoxCentralizar,
+    TextoComIcone
 };
