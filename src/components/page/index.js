@@ -56,7 +56,9 @@ function Page({ pagina }) {
             sombra={sombra > 0.5 ? sombra : 0.5}
             image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
         >
-            <CaixaPreta sombra={sombra} />
+            {sombra > 0 && (
+                <CaixaPreta sombra={sombra} />
+            )}
             <Header texto={!mostrarConteudo ? 'Clique na tela para voltar' : ''} pagina={pagina} />
             <TextoPrincipal pagina={pagina} />
             {carrossel ? (

@@ -3,10 +3,20 @@ import iconeLink from '../../svg/link.svg';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxBotoes, BoxTextos, TextoComIcone } from '../styles';
 import textos from '../textos';
+import { useEffect, useState } from 'react';
 
 function Botoes({ pagina }) {
+    const [valor, setValor] = useState('');
+
+    useEffect(() => {
+        setTimeout(() => {
+            setValor('true');
+        }, 3000)
+    }, []);
+
     return (
         <BoxBotoes
+            aparecer={valor}
             sx={{
                 paddingTop: tamanhoWidth || tamanhoHeight ? '1.6rem' : '3.2rem',
                 flexDirection: tamanhoWidth & !tamanhoHeight ? 'column' : !tamanhoWidth & tamanhoHeight ? 'row' : tamanhoWidth & tamanhoHeight ? 'column' : 'row',
@@ -15,7 +25,7 @@ function Botoes({ pagina }) {
             }}
         >
             <Link href='/programacao' width='100%'>
-                <BoxTextos pointer='true'>
+                <BoxTextos aparecer='false' pointer='true'>
                     <TextoComIcone
                         variant='title'
                         color='primary'
@@ -27,7 +37,7 @@ function Botoes({ pagina }) {
                 </BoxTextos>
             </Link>
             <Link href='/design' width='100%'>
-                <BoxTextos pointer='true'>
+                <BoxTextos aparecer='false' pointer='true'>
                     <TextoComIcone
                         variant='title'
                         color='primary'

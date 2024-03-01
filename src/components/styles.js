@@ -24,6 +24,10 @@ const TextoComIcone = styled(TextoComBorda)`
 const BoxBotoes = styled(Box)`
     width: 100%;
     display: flex;
+    opacity: ${({ aparecer }) => (aparecer ? 1 : 0)};
+    ${({ aparecer }) => (aparecer === 'true' && css`
+        animation: ${fadeIn} 1s forwards;
+    `)}
 `;
 
 const BoxTextos = styled(BoxBotoes)`
@@ -31,10 +35,6 @@ const BoxTextos = styled(BoxBotoes)`
     flex-direction: column;
     padding-right: 0.8rem;
     padding-left: 0.8rem;
-    opacity: ${({ aparecer }) => (aparecer ? 1 : 0)};
-    ${({ aparecer }) => (aparecer === 'true' && css`
-        animation: ${fadeIn} 1s forwards;
-    `)}
     cursor: ${({ pointer }) => (pointer === 'true' ? 'pointer' : 'auto')};
 `;
 
@@ -65,6 +65,10 @@ const BoxCentralizar = styled(Box)`
     justify-content: center;
     padding-left: ${({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '1.6rem' : '4.8rem')};
     padding-right: ${({ tamanhowidth, tamanhoheight }) => (tamanhowidth || tamanhoheight ? '1.6rem' : '4.8rem')};
+    opacity: ${({ aparecer }) => (aparecer ? 1 : 0)};
+    ${({ aparecer }) => (aparecer === 'true' && css`
+        animation: ${fadeIn} 1s forwards;
+    `)}
 `;
 
 const BoxConteudo = styled(Box)`
