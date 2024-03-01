@@ -16,8 +16,6 @@ const textos = {
     inicio: {
         linha1: 'Portfólio Mateus Dotta',
         linha2: 'Programador e Designer',
-        opcao1: 'Sobre Mim',
-        opcao2: 'Meus Trabalhos',
         foto: storm,
         cards: [{
             titulo: 'Sobre Mim',
@@ -56,7 +54,7 @@ const textos = {
             texto: 'Já desenvolvi em equipes, onde todos tinham de utilizar o GitHub em conjunto. Consigo fazer as principais funcionalidades com tranquilidade. Clique e veja meu GitHub.',
             link: false
         }, {
-            titulo: 'Autogerenciamento',
+            titulo: 'Auto gerenciamento',
             texto: 'Consigo me adaptar bem quando eu tenho que cuidar dos meus próprios horários e tarefas.',
             link: false
         }, {
@@ -85,7 +83,7 @@ const textos = {
             titulo: 'Madereira',
             texto: 'Desenvolvi o site de uma madeireira',
             foto: ottomar,
-            link: 'https://ottomar.vercel.app/'
+            link: 'https://www.ottomarmadeiras.com'
         }, {
             titulo: 'Este portfólio',
             texto: 'Desenvolvi esse portfólio',

@@ -6,21 +6,25 @@ import { BoxCard, BoxConteudo } from './styles';
 function Card({ titulo, foto, texto, link, variant }) {
     return (
         <BoxCard tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''} borda={link ? 'true' : ''}>
-            <Link sx={{ textDecoration: link ? '' : 'none' }}>
+            <Link href={link ? link : '#'} sx={{
+                textDecoration: link ? '' : 'none',
+                cursor: link ? 'pointer' : 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '3.2rem'
+            }}>
                 <TextoComBorda variant='title' color='primary'>
                     {titulo}
                 </TextoComBorda>
-            </Link>
-            <BoxConteudo tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
-                {variant === 'title' && (
-                    <img style={{ maxWidth: '26.8rem', maxHeight: '16.4rem', width: '50vw' }} src={foto} alt='foto do card' />
-                )}
-                <Link sx={{ textDecoration: link ? '' : 'none' }}>
-                    <TextoComBorda sx={{ width: variant === 'title' ? '26.8rem' : '100%', }} variant={variant} color='primary'>
+                <BoxConteudo tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
+                    {variant === 'title' && (
+                        <img style={{ maxWidth: '26.8rem', maxHeight: '16.4rem', width: '50vw' }} src={foto} alt='foto do card' />
+                    )}
+                    <TextoComBorda width='100%' variant={variant} color='primary'>
                         {texto}
                     </TextoComBorda>
-                </Link>
-            </BoxConteudo>
+                </BoxConteudo>
+            </Link>
         </BoxCard>
     );
 };

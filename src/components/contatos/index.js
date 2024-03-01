@@ -4,10 +4,19 @@ import linkedin from '../../svg/linkedin.svg';
 import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
 import { BoxFooter, TextoComBorda } from '../styles';
 import { BoxIcones } from './styles';
+import { useEffect, useState } from 'react';
 
 function Contatos() {
+    const [valor, setValor] = useState('');
+
+    useEffect(() => {
+        setTimeout(() => {
+            setValor('true');
+        }, 3500)
+    }, []);
+
     return (
-        <BoxFooter tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
+        <BoxFooter aparecer={valor} tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
             <TextoComBorda variant='title' color='primary'>
                 Contatos
             </TextoComBorda>

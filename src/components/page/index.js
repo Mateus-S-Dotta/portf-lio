@@ -1,35 +1,18 @@
-import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import Botoes from '../botoes';
 import Carrossel from '../carrossel';
 import Contatos from '../contatos';
 import Header from '../header';
 import Pinturas from '../pinturas';
-import RoleParaBaixo from '../roleParaBaixo';
 import TextoPrincipal from '../textoPrincipal';
 import textos from '../textos';
-import { BoxImagem } from './styles';
+import { BoxImagem, CaixaPreta } from './styles';
 
 function Page({ pagina }) {
-    const [passos, setPassos] = useState(1);
-    const [edicao, setEdicao] = useState(false);
     const [indicePinturas, setIndicePinturas] = useState(0);
     const [mostrarConteudo, setMostrarConteudo] = useState(true);
-    const carrossel = (pagina === 'curiosidades' || pagina === 'habilidades' || pagina === 'programacao' || pagina === 'design');
-    const sombra = passos === 1 || !mostrarConteudo ? 0.2 : passos === 2 ? 0.45 : 0.7;
-    const location = useLocation();
-
-    useEffect(() => {
-        setPassos(1);
-        setEdicao(false);
-        setIndicePinturas(0);
-        return () => {
-            setPassos(1);
-            setEdicao(false);
-            setIndicePinturas(0);
-        }
-    }, [location.pathname]);
+    const carrossel = (pagina === 'habilidades' || pagina === 'programacao' || pagina === 'design');
+    const [sombra, setSombra] = useState(1);
 
     function mudarIndicePinturas(direcao) {
         if (pagina === 'inicio')
@@ -53,61 +36,43 @@ function Page({ pagina }) {
             setMostrarConteudo(true);
     }
 
-    function rolamento(e) {
-        if (edicao || !mostrarConteudo) {
-            return
-        };
-        if (e.deltaY > 0 && passos < 3) {
-            setPassos(passos + 1);
-            setEdicao(true);
-            setTimeout(() => {
-                setEdicao(false);
-            }, 1000);
-        } else if (e.deltaY < 0 && passos > 1) {
-            setPassos(passos - 1);
-            setEdicao(true);
-            setTimeout(() => {
-                setEdicao(false);
-            }, 1000);
-        };
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            let contador = 100;
+            const intervalId = setInterval(() => {
+                contador--;
+                setSombra(contador / 100);
+                if (contador === 0) {
+                    clearInterval(intervalId);
+                }
+            }, 10);
+        }, 4000)
+    }, [])
 
     return (
         <BoxImagem
             sx={!mostrarConteudo && { cursor: 'pointer' }}
             onClick={() => alterarMostrarConteudo()}
-            sombra={sombra}
+            sombra={sombra > 0.5 ? sombra : 0.5}
             image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
-            onWheel={(e) => rolamento(e)}
         >
+            <CaixaPreta sombra={sombra} />
             <Header texto={!mostrarConteudo ? 'Clique na tela para voltar' : ''} pagina={pagina} />
-            {mostrarConteudo ? ((passos > 1) && (
-                <TextoPrincipal pagina={pagina} />
-            )) : (
-                <Box />
-            )}
-            {((passos === 3) && (
-                carrossel ? (
-                    <Carrossel pagina={pagina} />
-                ) : pagina === 'pinturas' || pagina === 'inicio' ? (
-                    <Pinturas
-                        pagina={pagina}
-                        setMostrarConteudo={setMostrarConteudo}
-                        mostrarConteudo={mostrarConteudo}
-                        indicePinturas={indicePinturas}
-                        mudarIndicePinturas={mudarIndicePinturas}
-                    />
-                ) : (
-                    <Botoes pagina={pagina} />
-                )
-            ))}
-            {mostrarConteudo && (passos === 3 ? (
-                <Contatos />
+            <TextoPrincipal pagina={pagina} />
+            {carrossel ? (
+                <Carrossel pagina={pagina} />
+            ) : pagina === 'pinturas' || pagina === 'inicio' ? (
+                <Pinturas
+                    pagina={pagina}
+                    setMostrarConteudo={setMostrarConteudo}
+                    mostrarConteudo={mostrarConteudo}
+                    indicePinturas={indicePinturas}
+                    mudarIndicePinturas={mudarIndicePinturas}
+                />
             ) : (
-                <Box sx={{ cursor: 'pointer' }} onClick={() => setPassos(passos + 1)}>
-                    <RoleParaBaixo />
-                </Box>
-            ))}
+                <Botoes pagina={pagina} />
+            )}
+            <Contatos />
         </BoxImagem>
     );
 };
