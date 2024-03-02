@@ -6,7 +6,19 @@ import Header from '../header';
 import Pinturas from '../pinturas';
 import TextoPrincipal from '../textoPrincipal';
 import textos from '../textos';
-import { BoxImagem, CaixaPreta } from './styles';
+import { BoxImagem, CaixaPreta, Pixel } from './styles';
+
+const altura = window.innerHeight;
+const largura = window.innerWidth;
+const array = Array.from({ length: 100 }, (_, index) => {
+    return {
+        id: index,
+        w: Math.trunc(Math.random() * largura),
+        y: Math.trunc(Math.random() * altura),
+        aparecer: (Math.random() * 2).toFixed(2),
+        tamanho: Math.trunc(Math.random() * 4 + 1),
+    }
+});
 
 function Page({ pagina }) {
     const [indicePinturas, setIndicePinturas] = useState(0);
@@ -57,7 +69,22 @@ function Page({ pagina }) {
             image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
         >
             {sombra > 0 && (
-                <CaixaPreta sombra={sombra} />
+                <CaixaPreta sombra={sombra}>
+                    {array.map(({ aparecer, id, w, y, tamanho }) => (
+                        <Pixel
+                            aparecer={aparecer}
+                            key={id}
+                            sx={{
+                                position: 'absolute',
+                                width: `${tamanho}px`,
+                                height: `${tamanho}px`,
+                                top: `${y}px`,
+                                left: `${w}px`,
+                                backgroundColor: 'white',
+                            }}
+                        />
+                    ))}
+                </CaixaPreta>
             )}
             <Header texto={!mostrarConteudo ? 'Clique na tela para voltar' : ''} pagina={pagina} />
             <TextoPrincipal pagina={pagina} />
