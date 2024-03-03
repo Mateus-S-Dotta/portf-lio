@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Link, styled } from '@mui/material';
 
 const BoxCard = styled(Box)`
     max-width: 58.6rem;
@@ -6,22 +6,20 @@ const BoxCard = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: ${({ tamanhoheight, tamanhowidth }) => (tamanhoheight || tamanhowidth ? '0.8rem' : '3.2rem')};
-    border: ${({ borda }) => (borda && ('#fff 1px solid'))};
+    border: ${({ border }) => (border && ('#fff 1px solid'))};
     padding: 1.6rem;
-    cursor: ${({ borda }) => (borda ? 'pointer' : 'auto')};
+    cursor: ${({ border }) => (border ? 'pointer' : 'auto')};
 `;
 
-const BoxConteudo = styled(Box)`
-    height: 100%;
+const StyledLink = styled(Link)`
+    text-decoration: ${({ link }) => (link ? '' : 'none')};
+    cursor: ${({ link }) => (link ? 'pointer' : 'auto')};
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.6rem;
+    flex-direction: column;
+    gap: ${({ sizeheight, sizewidth }) => ((sizewidth === 'true' || sizeheight === 'true') ? '1.6rem' : '3.2rem')};
 `;
 
 export {
     BoxCard,
-    BoxConteudo
+    StyledLink
 };

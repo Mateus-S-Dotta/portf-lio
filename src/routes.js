@@ -7,13 +7,13 @@ export default function MainRoutes() {
     return (
         <ThemeProvider theme={theme}>
             <Routes>
-                <Route path='*' element={<Page pagina='inicio' />} />
-                <Route path='/inicio' element={<Page pagina='inicio' />} />
-                <Route path='/trabalhos' element={<Page pagina='trabalhos' />} />
-                <Route path='/habilidades' element={<Page pagina='habilidades' />} />
-                <Route path='/programacao' element={<Page pagina='programacao' />} />
-                <Route path='/design' element={<Page pagina='design' />} />
-                <Route path='/pinturas' element={<Page pagina='pinturas' />} />
+                <Route path='*' element={<Page page='inicio' />} />
+                <Route path='/inicio' element={<Page page='inicio' />} />
+                <Route path='/trabalhos' element={<Page page='trabalhos' />} />
+                <Route path='/habilidades' element={<Page page='habilidades' />} />
+                <Route path='/programacao' element={<Page page='programacao' />} />
+                <Route path='/design' element={<Page page='design' />} />
+                <Route path='/pinturas' element={<Page page='pinturas' />} />
             </Routes>
         </ThemeProvider>
     )

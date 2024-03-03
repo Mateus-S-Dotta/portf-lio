@@ -1,108 +1,117 @@
 import { useEffect, useState } from 'react';
-import Botoes from '../botoes';
-import Carrossel from '../carrossel';
-import Contatos from '../contatos';
+import { theme } from '../../theme/theme';
+import Buttons from '../buttons';
+import Carousel from '../carousel';
+import Contact from '../contact';
 import Header from '../header';
-import Pinturas from '../pinturas';
-import TextoPrincipal from '../textoPrincipal';
-import textos from '../textos';
-import { BoxImagem, CaixaPreta, Pixel } from './styles';
+import MainText from '../mainText';
+import Paintings from '../paintings';
+import texts from '../texts';
+import Timer from '../timer';
+import { BoxImage, BoxBlack, Pixel } from './styles';
 
-const altura = window.innerHeight;
-const largura = window.innerWidth;
+const height = window.innerHeight;
+const width = window.innerWidth;
 const array = Array.from({ length: 100 }, (_, index) => {
     return {
         id: index,
-        w: Math.trunc(Math.random() * largura),
-        y: Math.trunc(Math.random() * altura),
-        aparecer: (Math.random() * 2).toFixed(2),
-        tamanho: Math.trunc(Math.random() * 4 + 1),
+        w: Math.trunc(Math.random() * width),
+        h: Math.trunc(Math.random() * height),
+        time: (Math.random() * 2).toFixed(2),
+        size: Math.trunc(Math.random() * 4 + 1),
     }
 });
 
-function Page({ pagina }) {
-    const [indicePinturas, setIndicePinturas] = useState(0);
-    const [mostrarConteudo, setMostrarConteudo] = useState(true);
-    const carrossel = (pagina === 'habilidades' || pagina === 'programacao' || pagina === 'design');
-    const [sombra, setSombra] = useState(1);
+function Page({ page }) {
+    const [indexPaintings, setindexPaintings] = useState(0);
+    const [showContent, setShowContent] = useState(true);
+    const carousel = (page === 'habilidades' || page === 'programacao' || page === 'design');
+    const [shadow, setShadow] = useState(1);
 
-    function mudarIndicePinturas(direcao) {
-        if (pagina === 'inicio')
+    function changeIndexPaintings(direction) {
+        if (page === 'inicio')
             return
 
-        if (direcao === 'esquerda') {
-            if (indicePinturas === 0) {
-                return setIndicePinturas(textos.pinturas.cards.length - 1);
+        if (direction === 'left') {
+            if (indexPaintings === 0) {
+                return setindexPaintings(texts.pinturas.cards.length - 1);
             };
-            setIndicePinturas(indicePinturas - 1);
+            setindexPaintings(indexPaintings - 1);
         } else {
-            if (indicePinturas === textos.pinturas.cards.length - 1) {
-                return setIndicePinturas(0);
+            if (indexPaintings === texts.pinturas.cards.length - 1) {
+                return setindexPaintings(0);
             };
-            setIndicePinturas(indicePinturas + 1);
+            setindexPaintings(indexPaintings + 1);
         };
     }
 
-    function alterarMostrarConteudo() {
-        if (!mostrarConteudo)
-            setMostrarConteudo(true);
+    function alterarshowContent() {
+        if (!showContent)
+            setShowContent(true);
     }
 
     useEffect(() => {
         setTimeout(() => {
-            let contador = 100;
+            let number = 100;
             const intervalId = setInterval(() => {
-                contador--;
-                setSombra(contador / 100);
-                if (contador === 0) {
+                number--;
+                setShadow(number / 100);
+                if (number === 0) {
                     clearInterval(intervalId);
                 }
-            }, 10);
-        }, 4000)
-    }, [])
+            }, page === 'inicio' ? 10 : 5);
+        }, page === 'inicio' ? (theme.initionTime + (5 * theme.animationTime)) : ((theme.initionTime + (5 * theme.animationTime)) / 2))
+    }, [page])
 
     return (
-        <BoxImagem
-            sx={!mostrarConteudo && { cursor: 'pointer' }}
-            onClick={() => alterarMostrarConteudo()}
-            sombra={sombra > 0.5 ? sombra : 0.5}
-            image={pagina === 'pinturas' ? textos.pinturas.cards[indicePinturas].foto : textos[pagina].foto}
+        <BoxImage
+            sx={!showContent && { cursor: 'pointer' }}
+            onClick={() => alterarshowContent()}
+            shadow={!showContent ? 0 : shadow > 0.5 ? shadow : 0.5}
+            image={page === 'pinturas' ? texts.pinturas.cards[indexPaintings].photo : texts[page].photo}
         >
-            {sombra > 0 && (
-                <CaixaPreta sombra={sombra}>
-                    {array.map(({ aparecer, id, w, y, tamanho }) => (
+            {shadow > 0 && (
+                <BoxBlack shadow={shadow}>
+                    {array.map(({ time, id, w, h, size }) => (
                         <Pixel
-                            aparecer={aparecer}
+                            time={time}
                             key={id}
-                            sx={{
-                                position: 'absolute',
-                                width: `${tamanho}px`,
-                                height: `${tamanho}px`,
-                                top: `${y}px`,
-                                left: `${w}px`,
-                                backgroundColor: 'white',
-                            }}
+                            w={w}
+                            h={h}
+                            size={size}
                         />
                     ))}
-                </CaixaPreta>
+                </BoxBlack>
             )}
-            <Header texto={!mostrarConteudo ? 'Clique na tela para voltar' : ''} pagina={pagina} />
-            <TextoPrincipal pagina={pagina} />
-            {carrossel ? (
-                <Carrossel pagina={pagina} />
-            ) : pagina === 'pinturas' || pagina === 'inicio' ? (
-                <Pinturas
-                    pagina={pagina}
-                    setMostrarConteudo={setMostrarConteudo}
-                    mostrarConteudo={mostrarConteudo}
-                    indicePinturas={indicePinturas}
-                    mudarIndicePinturas={mudarIndicePinturas}
-                />
+            <Timer zIndex='true' turn={1} page={page === 'inicio' ? 1 : 2}>
+                <Header text={!showContent ? 'Clique na tela para voltar' : ''} page={page} />
+            </Timer>
+            <Timer turn={2} page={page === 'inicio' ? 1 : 2}>
+                <MainText showContent={showContent} page={page} />
+            </Timer>
+            {carousel ? (
+                <Timer turn={3} page={page === 'inicio' ? 1 : 2} absolute={'true'}>
+                    <Carousel page={page} />
+                </Timer>
+            ) : page === 'pinturas' || page === 'inicio' ? (
+                <Timer turn={3} page={page === 'inicio' ? 1 : 2} absolute={'true'}>
+                    <Paintings
+                        page={page}
+                        setShowContent={setShowContent}
+                        showContent={showContent}
+                        indexPaintings={indexPaintings}
+                        changeIndexPaintings={changeIndexPaintings}
+                    />
+                </Timer>
             ) : (
-                <Botoes pagina={pagina} />
+                <Timer turn={3} page={page === 'inicio' ? 1 : 2}>
+                    <Buttons page={page} />
+                </Timer>
             )}
-            <Contatos />
-        </BoxImagem>
+            <Timer turn={4} page={page === 'inicio' ? 1 : 2}>
+                <Contact showContent={showContent} />
+            </Timer>
+        </BoxImage>
     );
 };
 

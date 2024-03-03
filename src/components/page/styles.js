@@ -8,8 +8,8 @@ const fadeIn = keyframes`
         opacity: 1;
     }
 `;
-const BoxImagem = styled(Box)`
-    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, ${({ sombra }) => (sombra)});
+const BoxImage = styled(Box)`
+    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, ${({ shadow }) => (shadow)});
     background-image: url(${({ image }) => (image)});
     background-size: cover;
     background-position: center;
@@ -20,23 +20,29 @@ const BoxImagem = styled(Box)`
     position: relative;
 `;
 
-const CaixaPreta = styled(Box)`
+const BoxBlack = styled(Box)`
     position: absolute;
     width: 100vw;
     height: 100vh; 
     background-color: black;
     overflow-y: hidden;
     overflow-x: hidden;
-    opacity: ${({ sombra }) => (sombra)};
+    opacity: ${({ shadow }) => (shadow)};
 `;
 
 const Pixel = styled(Box)`
-    animation: ${fadeIn} ${({ aparecer }) => (aparecer < 0.25 ? 0.25 : aparecer)}s linear infinite alternate;
+    animation: ${fadeIn} ${({ time }) => (time < 0.25 ? 0.25 : time)}s linear infinite alternate;
+    position: absolute;
+    width: ${({ size }) => (size)}px;
+    height: ${({ size }) => (size)}px;
+    top: ${({ h }) => (h)}px;
+    left: ${({ w }) => (w)}px;
+    background-color: white;
 `;
 
 export {
-    BoxImagem,
-    CaixaPreta,
+    BoxImage,
+    BoxBlack,
     Pixel
 };
 

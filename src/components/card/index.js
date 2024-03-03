@@ -1,30 +1,24 @@
-import { Link } from '@mui/material';
-import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
-import { TextoComBorda } from '../styles';
-import { BoxCard, BoxConteudo } from './styles';
+import { sizeHeight, sizeWidth } from '../../theme/theme';
+import { BorderText } from '../styles';
+import { BoxCard, StyledLink } from './styles';
+import { BoxContent } from '../styles';
 
-function Card({ titulo, foto, texto, link, variant }) {
+function Card({ title, photo, text, link, variant }) {
     return (
-        <BoxCard tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''} borda={link ? 'true' : ''}>
-            <Link href={link ? link : '#'} sx={{
-                textDecoration: link ? '' : 'none',
-                cursor: link ? 'pointer' : 'auto',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '3.2rem'
-            }}>
-                <TextoComBorda variant='title' color='primary'>
-                    {titulo}
-                </TextoComBorda>
-                <BoxConteudo tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
+        <BoxCard border={link ? 'true' : ''}>
+            <StyledLink sizeheight={sizeHeight ? 'true' : ''} sizewidth={sizeWidth ? 'true' : ''} href={link ? link : '#'} link={link ? link : ''}>
+                <BorderText variant='title' color='primary'>
+                    {title}
+                </BorderText>
+                <BoxContent sizeheight={sizeHeight ? 'true' : ''} sizewidth={sizeWidth ? 'true' : ''}>
                     {variant === 'title' && (
-                        <img style={{ maxWidth: '26.8rem', maxHeight: '16.4rem', width: '50vw' }} src={foto} alt='foto do card' />
+                        <img style={{ maxWidth: '26.8rem', maxHeight: '16.4rem', width: '50vw' }} src={photo} alt='foto do card' />
                     )}
-                    <TextoComBorda width='100%' variant={variant} color='primary'>
-                        {texto}
-                    </TextoComBorda>
-                </BoxConteudo>
-            </Link>
+                    <BorderText width='100%' variant={variant} color='primary'>
+                        {text}
+                    </BorderText>
+                </BoxContent>
+            </StyledLink>
         </BoxCard>
     );
 };

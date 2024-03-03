@@ -1,88 +1,79 @@
 import { Link } from '@mui/material';
-import { tamanhoHeight, tamanhoWidth } from '../../theme/theme';
-import { TextoComBorda } from '../styles';
+import { sizeHeight, sizeWidth } from '../../theme/theme';
+import { BorderText } from '../styles';
 import { BoxHeader } from './styles';
-import { useEffect, useState } from 'react';
 
-function Header({ texto, pagina }) {
-    const [valor, setValor] = useState('');
-
-    useEffect(() => {
-        setTimeout(() => {
-            setValor('true');
-        }, 2000)
-    }, []);
-
+function Header({ text, page }) {
     return (
-        <BoxHeader aparecer={valor} tamanhoheight={tamanhoHeight ? 'true' : ''} tamanhowidth={tamanhoWidth ? 'true' : ''}>
-            {texto ? (
-                <TextoComBorda pointer='true' variant='text' color='primary'>
-                    {texto}
-                </TextoComBorda>
+        <BoxHeader sizeheight={sizeHeight ? 'true' : ''} sizewidth={sizeWidth ? 'true' : ''}>
+            {text ? (
+                <BorderText pointer='true' variant='text' color='primary'>
+                    {text}
+                </BorderText>
             ) : (
                 <>
                     <Link href='/inicio'>
-                        <TextoComBorda pointer='true' variant='text' color='primary'>
+                        <BorderText pointer='true' variant='text' color='primary'>
                             Inicio
-                        </TextoComBorda>
+                        </BorderText>
                     </Link>
-                    {pagina === 'habilidades' && (
+                    {page === 'habilidades' && (
                         <>
-                            <TextoComBorda variant='text' color='primary'>
+                            <BorderText variant='text' color='primary'>
                                 /
-                            </TextoComBorda>
+                            </BorderText>
                             <Link href='habilidades'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
+                                <BorderText pointer='true' variant='text' color='primary'>
                                     Habilidades
-                                </TextoComBorda>
+                                </BorderText>
                             </Link>
                         </>
                     )}
-                    {pagina === 'pinturas' && (
+                    {page === 'pinturas' && (
                         <>
-                            <TextoComBorda variant='text' color='primary'>
+                            <BorderText variant='text' color='primary'>
                                 /
-                            </TextoComBorda>
+                            </BorderText>
                             <Link href='/pinturas'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
+                                <BorderText pointer='true' variant='text' color='primary'>
                                     Pinturas
-                                </TextoComBorda>
+                                </BorderText>
                             </Link>
                         </>
                     )}
-                    {(pagina === 'trabalhos' || pagina === 'programacao' || pagina === 'design') && (
+                    {(page === 'trabalhos' || page === 'programacao' || page === 'design') && (
                         <>
-                            <TextoComBorda variant='text' color='primary'>
+                            <BorderText variant='text' color='primary'>
                                 /
-                            </TextoComBorda>
+                            </BorderText>
                             <Link href='/trabalhos'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
+                                <BorderText pointer='true' variant='text' color='primary'>
                                     Trabalhos
-                                </TextoComBorda>
+                                </BorderText>
                             </Link>
                         </>
                     )}
-                    {pagina === 'programacao' && (
+                    {page === 'programacao' && (
                         <>
-                            <TextoComBorda variant='text' color='primary'>
+                            <BorderText variant='text' color='primary'>
                                 /
-                            </TextoComBorda>
+                            </BorderText>
                             <Link href='/programacao'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
+                                <BorderText pointer='true' variant='text' color='primary'>
                                     Programação
-                                </TextoComBorda>
+                                </BorderText>
                             </Link>
                         </>
                     )}
-                    {pagina === 'design' && (
+                    {page === 'design' && (
                         <>
-                            <TextoComBorda variant='text' color='primary'>
+                            <BorderText variant='text' color='primary'>
                                 /
-                            </TextoComBorda>
+                            </BorderText>
                             <Link href='/design'>
-                                <TextoComBorda pointer='true' variant='text' color='primary'>
+                                <BorderText pointer='true' variant='text' color='primary'>
                                     Design
-                                </TextoComBorda>
+                                </BorderText>
                             </Link>
                         </>
                     )}
