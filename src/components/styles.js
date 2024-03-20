@@ -7,9 +7,9 @@ const BorderText = styled(Typography)`
 `;
 
 const IconText = styled(BorderText)`
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 `;
 
 const BoxButtons = styled(Box)`

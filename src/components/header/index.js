@@ -1,84 +1,44 @@
 import { Link } from '@mui/material';
-import { sizeHeight, sizeWidth } from '../../theme/theme';
+import { sizeHeight, sizeWidth, sizeWidthFonte, sizeHeightFonte } from '../../theme/theme';
 import { BorderText } from '../styles';
-import { BoxHeader } from './styles';
+import { BoxHeader, LinkStyled } from './styles';
+import arrowBack from '../../svg/arrowBack.svg';
 
 function Header({ text, page }) {
+    const imgStyle = {
+        width: sizeWidthFonte || sizeHeightFonte ? '1.2rem' : '1.6rem'
+    }
+
+    function handleClick(e) {
+        e.preventDefault();
+    }
+
     return (
         <BoxHeader sizeheight={sizeHeight ? 'true' : ''} sizewidth={sizeWidth ? 'true' : ''}>
             {text ? (
-                <BorderText pointer='true' variant='text' color='primary'>
-                    {text}
+                <Link onClick={handleClick}>
+                    <BorderText pointer='true' variant='text' color='primary'>
+                        {text}
+                    </BorderText>
+                </Link>
+            ) : (<>{page === 'inicio' ? (
+                <BorderText variant='text' color='primary'>
+                    Inicio
                 </BorderText>
             ) : (
-                <>
-                    <Link href='/inicio'>
-                        <BorderText pointer='true' variant='text' color='primary'>
-                            Inicio
-                        </BorderText>
-                    </Link>
-                    {page === 'habilidades' && (
-                        <>
-                            <BorderText variant='text' color='primary'>
-                                /
-                            </BorderText>
-                            <Link href='habilidades'>
-                                <BorderText pointer='true' variant='text' color='primary'>
-                                    Habilidades
-                                </BorderText>
-                            </Link>
-                        </>
-                    )}
-                    {page === 'pinturas' && (
-                        <>
-                            <BorderText variant='text' color='primary'>
-                                /
-                            </BorderText>
-                            <Link href='/pinturas'>
-                                <BorderText pointer='true' variant='text' color='primary'>
-                                    Pinturas
-                                </BorderText>
-                            </Link>
-                        </>
-                    )}
-                    {(page === 'trabalhos' || page === 'programacao' || page === 'design') && (
-                        <>
-                            <BorderText variant='text' color='primary'>
-                                /
-                            </BorderText>
-                            <Link href='/trabalhos'>
-                                <BorderText pointer='true' variant='text' color='primary'>
-                                    Trabalhos
-                                </BorderText>
-                            </Link>
-                        </>
-                    )}
-                    {page === 'programacao' && (
-                        <>
-                            <BorderText variant='text' color='primary'>
-                                /
-                            </BorderText>
-                            <Link href='/programacao'>
-                                <BorderText pointer='true' variant='text' color='primary'>
-                                    Programação
-                                </BorderText>
-                            </Link>
-                        </>
-                    )}
-                    {page === 'design' && (
-                        <>
-                            <BorderText variant='text' color='primary'>
-                                /
-                            </BorderText>
-                            <Link href='/design'>
-                                <BorderText pointer='true' variant='text' color='primary'>
-                                    Design
-                                </BorderText>
-                            </Link>
-                        </>
-                    )}
-                </>
+                <LinkStyled href='/inicio'>
+                    <img style={imgStyle} src={arrowBack} alt='voltar ao inicio' />
+                    <BorderText pointer='true' variant='text' color='primary'>
+                        Voltar ao Inicio
+                    </BorderText>
+                </LinkStyled>
             )}
+                <Link href='https://docs.google.com/document/d/1aJ2GZ5oFDnjbzGBD4_NbgBFD98Wp69CV/edit?usp=sharing&ouid=109215236273544494631&rtpof=true&sd=true'>
+                    <BorderText pointer='true' variant='text' color='primary'>
+                        Download CV
+                    </BorderText>
+                </Link>
+            </>)}
         </BoxHeader>
     );
 };

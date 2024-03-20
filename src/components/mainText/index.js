@@ -2,7 +2,6 @@ import { BoxTexts, BorderText } from '../styles';
 import texts from '../texts';
 
 function MainText({ page, showContent }) {
-    console.log(showContent)
     return (
         <BoxTexts sx={{ display: !showContent && 'none' }}>
             <BorderText variant='title' color='primary'>

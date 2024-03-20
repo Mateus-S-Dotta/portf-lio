@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { theme } from '../../theme/theme';
-import Buttons from '../buttons';
 import Carousel from '../carousel';
 import Contact from '../contact';
 import Header from '../header';
 import MainText from '../mainText';
-import Paintings from '../paintings';
+import Paintings from '../painting';
 import texts from '../texts';
 import Timer from '../timer';
-import { BoxImage, BoxBlack, Pixel } from './styles';
+import { BoxBlack, BoxImage, Pixel } from './styles';
 
 const height = window.innerHeight;
 const width = window.innerWidth;
@@ -93,7 +92,7 @@ function Page({ page }) {
                 <Timer turn={3} page={page === 'inicio' ? 1 : 2} absolute={'true'}>
                     <Carousel page={page} />
                 </Timer>
-            ) : page === 'pinturas' || page === 'inicio' ? (
+            ) : (
                 <Timer turn={3} page={page === 'inicio' ? 1 : 2} absolute={'true'}>
                     <Paintings
                         page={page}
@@ -102,10 +101,6 @@ function Page({ page }) {
                         indexPaintings={indexPaintings}
                         changeIndexPaintings={changeIndexPaintings}
                     />
-                </Timer>
-            ) : (
-                <Timer turn={3} page={page === 'inicio' ? 1 : 2}>
-                    <Buttons page={page} />
                 </Timer>
             )}
             <Timer turn={4} page={page === 'inicio' ? 1 : 2}>

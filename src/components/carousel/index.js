@@ -13,7 +13,7 @@ function Carousel({ page }) {
                     {texts[page].cards.map(({ title, text, photo, link }, indice) => (
                         <Card
                             key={indice}
-                            variant={(page === 'curiosidades' || page === 'habilidades') ? 'subTitle' : 'title'}
+                            variant={page === 'habilidades' ? 'subTitle' : 'title'}
                             title={title}
                             text={text}
                             photo={photo}

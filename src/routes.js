@@ -9,7 +9,6 @@ export default function MainRoutes() {
             <Routes>
                 <Route path='*' element={<Page page='inicio' />} />
                 <Route path='/inicio' element={<Page page='inicio' />} />
-                <Route path='/trabalhos' element={<Page page='trabalhos' />} />
                 <Route path='/habilidades' element={<Page page='habilidades' />} />
                 <Route path='/programacao' element={<Page page='programacao' />} />
                 <Route path='/design' element={<Page page='design' />} />
