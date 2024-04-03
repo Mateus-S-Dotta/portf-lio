@@ -10,6 +10,7 @@ import portfolio from '../imgs/portfolio.png';
 import figjam from '../imgs/figjam.png';
 import caldeira from '../imgs/caldeira.png';
 import pet from '../imgs/pet.png';
+import vue from '../imgs/vue.png';
 
 const texts = {
     inicio: {
@@ -76,6 +77,11 @@ const texts = {
             text: 'Desenvolvi o site de uma madeireira',
             photo: ottomar,
             link: 'https://www.ottomarmadeiras.com'
+        }, {
+            title: 'Aprendendo Vue',
+            text: 'Meu aprendizado de Vue.js',
+            photo: vue,
+            link: 'https://aprendendo-vue.vercel.app'
         }, {
             title: 'Este portfólio',
             text: 'Desenvolvi esse portfólio',
