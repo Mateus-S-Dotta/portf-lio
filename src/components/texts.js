@@ -19,7 +19,7 @@ const texts = {
         photo: storm,
         cards: [{
             title: 'Sobre Mim',
-            text: 'Meu nome é Mateus, tenho 20 anos e sou Programador Full Stack e Designer. Já me envolvi em vários projetos de programação e Design, principalmente nos cursos que fiz, no Instituto Caldeira e na Cubos Academy. Estou em busca da minha primeira oportunidade profissional na área de tecnologia, mas já trabalhei desde os 11 anos, entregando panfletos, atendente de locadora (sim, locadora de filmes), jardineiro, e muitos outros. Minhas maiores experiências profissionais foram em imobiliárias, como agenciador, onde lidava muito com o público e convencia os proprietários a colocar os imóveis a venda conosco. Obrigado.'
+            text: 'Olá! Tenho 21 anos e trabalho desde os 11, passando por diversas experiências que moldaram quem sou hoje. Já fui atendente de locadora, jardineiro, piscineiro e até vendi um imóvel. Aos 18 anos, iniciei o curso de ADS na Cubos Academy e, logo após concluí-lo, comecei o curso de Design no Instituto Caldeira. Graças à comunidade do Caldeira, conquistei meus dois primeiros estágios, fui aprovado na 42 SP, consegui meu segundo estágio e hoje sou sócio de uma startup. Sou muito grato ao Caldeira — pensando bem, nossa relação é quase parental :) Minha trajetória ainda está no começo, mas me dediquei muito para que ela já fosse intensa e significativa.'
         }]
     },
     habilidades: {
